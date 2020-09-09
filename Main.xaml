@@ -1,0 +1,445 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1862,10757" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uasb="clr-namespace:UiPath.Activities.System.Binding;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="48">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Activities.System.Binding</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Mail</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <ueab:SequenceX sap:VirtualizedContainerService.HintSize="1872,10692" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+    <ueab:SequenceX.Variables>
+      <Variable x:TypeArguments="ue:IWorkbookQuickHandle" Default="[new WorkbookQuickHandle(workbookPath:=&quot;Project_Notebook.xlsx&quot;,visible:=True,autoSave:=False,createNew:=True,readOnly:=False,isWorkspace:=True)]" Name="Notes" />
+      <Variable x:TypeArguments="uasb:BindingsRepository" Default="[new UiPath.Activities.System.Binding.BindingsRepository()]" Name="Saved" />
+    </ueab:SequenceX.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ueab:ExcelApplicationCard Password="{x:Null}" DisplayName="Utilizar el archivo de traslado de impresoras " sap:VirtualizedContainerService.HintSize="1830,10602" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" WorkbookPath="C:\bot_rpa_sena\Traslado.xlsx">
+      <ueab:ExcelApplicationCard.Body>
+        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="traslado_impresora" />
+          </ActivityAction.Argument>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1818,10374" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:ExcelApplicationCard Password="{x:Null}" DisplayName="Utilizar el archivo Matriz" sap:VirtualizedContainerService.HintSize="1776,10284" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" WorkbookPath="C:\bot_rpa_sena\Matriz Instalacion ERC.xlsx">
+              <ueab:ExcelApplicationCard.Body>
+                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="matriz" />
+                  </ActivityAction.Argument>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1764,10056" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:VLookupX ColumnIndex="[13]" DisplayName="Buscar el Serial en la matriz y traer el MODELO de la impresora" ExactMatch="True" sap:VirtualizedContainerService.HintSize="1722,257" sap2010:WorkflowViewState.IdRef="VLookupX_1" Label="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B3&quot;)]" SourceRange="[matriz.Sheet(&quot;Matriz ERC&quot;).Range(&quot;C:R&quot;)]">
+                      <ueab:VLookupX.Value>
+                        <OutArgument x:TypeArguments="ue:ExcelValue">[traslado_impresora.Sheet("Registro").Cell("B4")]</OutArgument>
+                      </ueab:VLookupX.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:VLookupX>
+                    <ueab:VLookupX ColumnIndex="[8]" DisplayName="Buscar el Serial en la matriz y traer la SEDE donde esta la impresora" ExactMatch="True" sap:VirtualizedContainerService.HintSize="1722,257" sap2010:WorkflowViewState.IdRef="VLookupX_2" Label="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B3&quot;)]" SourceRange="[matriz.Sheet(&quot;Matriz ERC&quot;).Range(&quot;C:R&quot;)]">
+                      <ueab:VLookupX.Value>
+                        <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("sede_origen")]</OutArgument>
+                      </ueab:VLookupX.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:VLookupX>
+                    <ueab:WriteCellX Cell="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B5&quot;)]" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="1722,161" sap2010:WorkflowViewState.IdRef="WriteCellX_4" Value="[Saved.Values(Of ExcelValue)(&quot;sede_origen&quot;)]" />
+                    <ueab:VLookupX ColumnIndex="[9]" DisplayName="Buscar el Serial en la matriz y traer la DIRECCIÓN donde esta la impresora" ExactMatch="True" sap:VirtualizedContainerService.HintSize="1722,257" sap2010:WorkflowViewState.IdRef="VLookupX_3" Label="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B3&quot;)]" SourceRange="[matriz.Sheet(&quot;Matriz ERC&quot;).Range(&quot;C:R&quot;)]">
+                      <ueab:VLookupX.Value>
+                        <OutArgument x:TypeArguments="ue:ExcelValue">[traslado_impresora.Sheet("Registro").Cell("B6")]</OutArgument>
+                      </ueab:VLookupX.Value>
+                    </ueab:VLookupX>
+                    <ueab:VLookupX ColumnIndex="[2]" DisplayName="Buscar el almacen de destino y traer el CODIGO DE DEPENDENCIA para guardarlo en una variable" ExactMatch="True" sap:VirtualizedContainerService.HintSize="1722,257" sap2010:WorkflowViewState.IdRef="VLookupX_4" Label="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B10&quot;)]" SourceRange="[traslado_impresora.Sheet(&quot;Dependencias&quot;).Range(&quot;A:I&quot;)]">
+                      <ueab:VLookupX.Value>
+                        <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("cod_dependencia_destino")]</OutArgument>
+                      </ueab:VLookupX.Value>
+                    </ueab:VLookupX>
+                    <ueab:WriteCellX Cell="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B14&quot;)]" DisplayName="Escribir el CODIGO DE DEPENDENCIA en el archivo traslado" sap:VirtualizedContainerService.HintSize="1722,161" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[Saved.Values(Of ExcelValue)(&quot;cod_dependencia_destino&quot;)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:WriteCellX>
+                    <ueab:VLookupX ColumnIndex="[4]" DisplayName="Buscar el almacen de destino y traer la CIUDAD" ExactMatch="True" sap:VirtualizedContainerService.HintSize="1722,257" sap2010:WorkflowViewState.IdRef="VLookupX_5" Label="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B10&quot;)]" SourceRange="[traslado_impresora.Sheet(&quot;Dependencias&quot;).Range(&quot;A:I&quot;)]">
+                      <ueab:VLookupX.Value>
+                        <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("ciudad_destino")]</OutArgument>
+                      </ueab:VLookupX.Value>
+                    </ueab:VLookupX>
+                    <ueab:WriteCellX Cell="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B15&quot;)]" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="1722,161" sap2010:WorkflowViewState.IdRef="WriteCellX_5" Value="[Saved.Values(Of ExcelValue)(&quot;ciudad_destino&quot;)]" />
+                    <ueab:VLookupX ColumnIndex="[5]" DisplayName="Buscar el almacen de destino y traer la MARCA" ExactMatch="True" sap:VirtualizedContainerService.HintSize="1722,257" sap2010:WorkflowViewState.IdRef="VLookupX_6" Label="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B10&quot;)]" SourceRange="[traslado_impresora.Sheet(&quot;Dependencias&quot;).Range(&quot;A:I&quot;)]">
+                      <ueab:VLookupX.Value>
+                        <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("marca_destino")]</OutArgument>
+                      </ueab:VLookupX.Value>
+                    </ueab:VLookupX>
+                    <ueab:WriteCellX Cell="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B16&quot;)]" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="1722,161" sap2010:WorkflowViewState.IdRef="WriteCellX_6" Value="[Saved.Values(Of ExcelValue)(&quot;marca_destino&quot;)]" />
+                    <If Condition="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B10&quot;) &lt;&gt; string.Format(&quot;COMPUSPAR&quot;)]" DisplayName="Si es diferente a compuspar trae el SERVIDOR y la COLA, sino como va para bodega no debe llevar estos datos" sap:VirtualizedContainerService.HintSize="1722,1204" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="454,1046" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ueab:VLookupX ColumnIndex="[11]" DisplayName="Buscar el serial y traer el SERVIDOR" ExactMatch="True" sap:VirtualizedContainerService.HintSize="412,257" sap2010:WorkflowViewState.IdRef="VLookupX_7" Label="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B3&quot;)]" SourceRange="[matriz.Sheet(&quot;Matriz ERC&quot;).Range(&quot;C:R&quot;)]">
+                            <ueab:VLookupX.Value>
+                              <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("servidor_destino")]</OutArgument>
+                            </ueab:VLookupX.Value>
+                          </ueab:VLookupX>
+                          <ueab:WriteCellX Cell="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B18&quot;)]" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_10" Value="[Saved.Values(Of ExcelValue)(&quot;servidor_destino&quot;)]" />
+                          <ueab:VLookupX ColumnIndex="[12]" DisplayName="Buscar el serial y traer la COLA" ExactMatch="True" sap:VirtualizedContainerService.HintSize="412,257" sap2010:WorkflowViewState.IdRef="VLookupX_8" Label="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B3&quot;)]" SourceRange="[matriz.Sheet(&quot;Matriz ERC&quot;).Range(&quot;C:R&quot;)]">
+                            <ueab:VLookupX.Value>
+                              <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("cola_destino")]</OutArgument>
+                            </ueab:VLookupX.Value>
+                          </ueab:VLookupX>
+                          <ueab:WriteCellX Cell="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B19&quot;)]" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_11" Value="[Saved.Values(Of ExcelValue)(&quot;cola_destino&quot;)]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="454,452" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ueab:WriteCellX Cell="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B18&quot;)]" DisplayName="Escribir en SERVIDOR un N/A" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[string.Format(&quot;N/A&quot;)]" />
+                          <ueab:WriteCellX Cell="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B19&quot;)]" DisplayName="Escribir en COLA un N/A" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[string.Format(&quot;N/A&quot;)]" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <ueab:ExcelForEachRow DisplayName="Excel para cada fila - recorrer los seriales de la MATRIZ" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="1722,2366" sap2010:WorkflowViewState.IdRef="ExcelForEachRow_1" Range="[matriz.Table(&quot;Matriz&quot;)]" SaveAfterEachRow="False">
+                      <ueab:ExcelForEachRow.Body>
+                        <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
+                          <ActivityAction.Argument1>
+                            <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                          </ActivityAction.Argument1>
+                          <ActivityAction.Argument2>
+                            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                          </ActivityAction.Argument2>
+                          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="510,2187" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[CurrentRow.ByField(&quot;SERIAL&quot;) = traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B3&quot;)]" DisplayName="Si el SERIAL de la matriz es igual al SERIAL del archivo de traslado se actualizara con la nueva ubicacioón" sap:VirtualizedContainerService.HintSize="468,2097" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="454,1922" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ueab:WriteCellX Cell="[CurrentRow.ByField(&quot;ALMACEN&quot;)]" DisplayName="Escribir en la columna ALMACEN de la matriz el nombre de la SEDE DESTINO" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_7" Value="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B10&quot;)]" />
+                                  <ueab:WriteCellX Cell="[CurrentRow.ByField(&quot;DIRECCIÓN ALMACEN&quot;)]" DisplayName="Escribir en la columna DIRECCION ALMACEN de la matriz la DIRECCION DESTINO" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_8" Value="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B11&quot;)]" />
+                                  <ueab:WriteCellX Cell="[CurrentRow.ByField(&quot;CodigoDependencia&quot;)]" DisplayName="Escribir en la columna CODIGO DE DEPENDENCIA de la matriz el COD DE DEPENDENCIA DESTINO" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_9" Value="[Saved.Values(Of ExcelValue)(&quot;cod_dependencia_destino&quot;)]" />
+                                  <ueab:WriteCellX Cell="[CurrentRow.ByField(&quot;CIUDAD&quot;)]" DisplayName="Escribir en la columna CIUDAD de la matriz la CIUDAD DESTINO" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_14" Value="[Saved.Values(Of ExcelValue)(&quot;ciudad_destino&quot;)]" />
+                                  <ueab:WriteCellX Cell="[CurrentRow.ByField(&quot;MARCA&quot;)]" DisplayName="Escribir en la columna MARCA de la matriz la MARCA DESTINO" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_15" Value="[Saved.Values(Of ExcelValue)(&quot;marca_destino&quot;)]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ueab:WriteCellX>
+                                  <ueab:WriteCellX Cell="[CurrentRow.ByField(&quot;AREA&quot;)]" DisplayName="Escribir en la columna AREA de la matriz el AREA DESTINO" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_18" Value="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B17&quot;)]" />
+                                  <ueab:WriteCellX Cell="[CurrentRow.ByField(&quot;SERVIDORES&quot;)]" DisplayName="Escribir en la columna SERVIDORES de la matriz la SERVIDOR DESTINO" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_16" Value="[Saved.Values(Of ExcelValue)(&quot;servidor_destino&quot;)]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ueab:WriteCellX>
+                                  <ueab:WriteCellX Cell="[CurrentRow.ByField(&quot;NOMBRECOLADEIMPRESION&quot;)]" DisplayName="Escribir en la columna NOMBRE COLA IMPRESION de la matriz la COLA DESTINO" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_17" Value="[Saved.Values(Of ExcelValue)(&quot;cola_destino&quot;)]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ueab:WriteCellX>
+                                  <ueab:WriteCellX Cell="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B25&quot;)]" DisplayName="Se captura la IP de la impresora" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_19" Value="[CurrentRow.ByField(&quot;DIRECCION&quot;)]" />
+                                  <ui:Break DisplayName="Salir de bucle" sap:VirtualizedContainerService.HintSize="412,23" sap2010:WorkflowViewState.IdRef="Break_1" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:ExcelForEachRow.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:ExcelForEachRow>
+                    <ueab:ExcelApplicationCard Password="{x:Null}" DisplayName="Utilice el archivo MP8032" sap:VirtualizedContainerService.HintSize="1722,3730" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" WorkbookPath="C:\bot_rpa_sena\MP8032SP.xlsx">
+                      <ueab:ExcelApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="mp8032" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1710,3502" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:ExcelForEachRow DisplayName="Recorrer el archivo MP8032 para encontrar el SERIAL que se esta modificando" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="1668,3412" sap2010:WorkflowViewState.IdRef="ExcelForEachRow_2" Range="[mp8032.Table(&quot;MP8032SP&quot;)]" SaveAfterEachRow="False">
+                              <ueab:ExcelForEachRow.Body>
+                                <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
+                                  <ActivityAction.Argument1>
+                                    <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                                  </ActivityAction.Argument1>
+                                  <ActivityAction.Argument2>
+                                    <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                                  </ActivityAction.Argument2>
+                                  <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1656,3233" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If Condition="[CurrentRow.ByField(&quot;Serial #&quot;) = traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B3&quot;)]" DisplayName="Si el SERIAL del archivo TRASLADO es igual al SERIAL del MP8032 se copiara la linea" sap:VirtualizedContainerService.HintSize="1614,3143" sap2010:WorkflowViewState.IdRef="If_3">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="1600,2968" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ueab:ExcelApplicationCard Password="{x:Null}" DisplayName="Utilice el archivo en el que se van a registrar los cambios" sap:VirtualizedContainerService.HintSize="1558,2815" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_4" WorkbookPath="C:\bot_rpa_sena\MP8032SP_CON_CAMBIO.xlsx">
+                                            <ueab:ExcelApplicationCard.Body>
+                                              <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                                                <ActivityAction.Argument>
+                                                  <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="cambios_mp8032" />
+                                                </ActivityAction.Argument>
+                                                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1546,2587" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ueab:CopyPasteRangeX DestinationRange="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Range(&quot;3:3&quot;)]" DisplayName="Si se encuentra el SERIAL se toma toda la fila y se pega en el archivo donde se registraran los cambios" sap:VirtualizedContainerService.HintSize="1504,209" sap2010:WorkflowViewState.IdRef="CopyPasteRangeX_1" PasteOptions="Values" SourceRange="[CurrentRow]" Transpose="False" />
+                                                  <If Condition="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B10&quot;) = string.Format(&quot;COMPUSPAR&quot;)]" DisplayName="Si la SEDE DESTINO es igual a COMPUSPAR se llenaran los campos " sap:VirtualizedContainerService.HintSize="1504,2248" sap2010:WorkflowViewState.IdRef="If_4">
+                                                    <If.Then>
+                                                      <Sequence sap:VirtualizedContainerService.HintSize="454,1256" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;D3&quot;)]" DisplayName="Escribir en el campo INSTALLED ADDRESS NAME la palabra Compuspar" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_20" Value="[string.Format(&quot;Compuspar&quot;)]" />
+                                                        <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;K3&quot;)]" DisplayName="Escribir en el campo Phy Loc 1 la palabra Bodega" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_21" Value="[string.Format(&quot;Bodega&quot;)]" />
+                                                        <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;AD3&quot;)]" DisplayName="Escribir en el campo CONTACT USER ID el codigo de contacto para Compuspar" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_22" Value="[string.Format(&quot;1-44VKZOQ9&quot;)]" />
+                                                        <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;AY3&quot;)]" DisplayName="Escribir en el campo NETWORK CONNECTED la letra N (NO) " sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_23" Value="[string.Format(&quot;N&quot;)]" />
+                                                        <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;BD3&quot;)]" DisplayName="Escribir en el campo METER SOURCE la palabra Manual" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_24" Value="[string.Format(&quot;Manual&quot;)]" />
+                                                        <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;BE3&quot;)]" DisplayName="Escribir en el campo METER TYPE la palabra Not Needed (innecesario)" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_25" Value="[string.Format(&quot;Not Needed&quot;)]" />
+                                                      </Sequence>
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <Sequence sap:VirtualizedContainerService.HintSize="1027,2092" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <If Condition="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B21&quot;) = string.Format(&quot;LOCAL&quot;)]" DisplayName="Si la impresora en el campo IP tiene la palabra LOCAL se llenaran los campos de la siguiente manera, si no se cumple se llenaran los datos de la forma por defecto " sap:VirtualizedContainerService.HintSize="985,2002" sap2010:WorkflowViewState.IdRef="If_5">
+                                                          <If.Then>
+                                                            <Sequence sap:VirtualizedContainerService.HintSize="454,1256" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;D3&quot;)]" DisplayName="Escribir en el campo INSTALLED ADDRESS NAME la SEDE MP8032" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_26" Value="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B20&quot;)]" />
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;K3&quot;)]" DisplayName="Escribir en el campo Phy Loc 1 la palabra MAQUINA LOCAL" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_27" Value="[string.Format(&quot;MAQUINA LOCAL&quot;)]" />
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;AD3&quot;)]" DisplayName="Escribir en el campo CONTACT USER ID el codigo de contacto" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_28" Value="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B23&quot;)]" />
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;AY3&quot;)]" DisplayName="Escribir en el campo NETWORK CONNECTED la letra N (NO) " sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_29" Value="[string.Format(&quot;N&quot;)]" />
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;BD3&quot;)]" DisplayName="Escribir en el campo METER SOURCE la palabra Manual" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_30" Value="[string.Format(&quot;Manual&quot;)]" />
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;BE3&quot;)]" DisplayName="Escribir en el campo METER TYPE la palabra Not Needed (innecesario)" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_31" Value="[string.Format(&quot;Manual&quot;)]" />
+                                                            </Sequence>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Sequence sap:VirtualizedContainerService.HintSize="508,1846" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;D3&quot;)]" DisplayName="Escribir en el campo INSTALLED ADDRESS NAME la SEDE MP8032" sap:VirtualizedContainerService.HintSize="466,161" sap2010:WorkflowViewState.IdRef="WriteCellX_32" Value="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B20&quot;)]" />
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;K3&quot;)]" DisplayName="Escribir en el campo Phy Loc 1 la MARCA 8032" sap:VirtualizedContainerService.HintSize="466,161" sap2010:WorkflowViewState.IdRef="WriteCellX_33" Value="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B21&quot;)]" />
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;L3&quot;)]" DisplayName="Escribir en el campo Phy Loc 2 el AREA 8032" sap:VirtualizedContainerService.HintSize="466,161" sap2010:WorkflowViewState.IdRef="WriteCellX_38" Value="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B22&quot;)]" />
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;AD3&quot;)]" DisplayName="Escribir en el campo CONTACT USER ID el codigo de contacto" sap:VirtualizedContainerService.HintSize="466,161" sap2010:WorkflowViewState.IdRef="WriteCellX_34" Value="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B23&quot;)]" />
+                                                              <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="466,349" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                                                <ui:CommentOut.Body>
+                                                                  <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="452,272" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;AW3&quot;)]" DisplayName="Escribir en el campo IP Address la IP de la impresora" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_39" Value="[traslado_impresora.Sheet(&quot;Registro&quot;).Cell(&quot;B25&quot;)]">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </ueab:WriteCellX>
+                                                                  </Sequence>
+                                                                </ui:CommentOut.Body>
+                                                              </ui:CommentOut>
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;AY3&quot;)]" DisplayName="Escribir en el campo NETWORK CONNECTED la letra N (NO) " sap:VirtualizedContainerService.HintSize="466,161" sap2010:WorkflowViewState.IdRef="WriteCellX_35" Value="[string.Format(&quot;Y&quot;)]" />
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;BD3&quot;)]" DisplayName="Escribir en el campo METER SOURCE la palabra Automated Electronic" sap:VirtualizedContainerService.HintSize="466,161" sap2010:WorkflowViewState.IdRef="WriteCellX_36" Value="[string.Format(&quot;Automated Electronic&quot;)]" />
+                                                              <ueab:WriteCellX Cell="[cambios_mp8032.Sheet(&quot;Hoja1&quot;).Cell(&quot;BE3&quot;)]" DisplayName="Escribir en el campo METER TYPE la palabra Electronic" sap:VirtualizedContainerService.HintSize="466,161" sap2010:WorkflowViewState.IdRef="WriteCellX_37" Value="[string.Format(&quot;Electronic&quot;)]" />
+                                                            </Sequence>
+                                                          </If.Else>
+                                                        </If>
+                                                      </Sequence>
+                                                    </If.Else>
+                                                  </If>
+                                                </Sequence>
+                                              </ActivityAction>
+                                            </ueab:ExcelApplicationCard.Body>
+                                          </ueab:ExcelApplicationCard>
+                                          <ui:Break DisplayName="Salir de bucle" sap:VirtualizedContainerService.HintSize="1558,23" sap2010:WorkflowViewState.IdRef="Break_2" />
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ueab:ExcelForEachRow.Body>
+                            </ueab:ExcelForEachRow>
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:ExcelApplicationCard.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:ExcelApplicationCard>
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelApplicationCard.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ueab:ExcelApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ueab:ExcelApplicationCard.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ueab:ExcelApplicationCard>
+  </ueab:SequenceX>
+</Activity>
